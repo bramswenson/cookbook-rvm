@@ -16,6 +16,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 include_recipe "rvm::system"
 include_recipe "rvm::default_ruby"
 include_recipe "rvm::global_gems"
