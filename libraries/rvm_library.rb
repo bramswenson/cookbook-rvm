@@ -1,4 +1,11 @@
 module RvmLibrary
+
+  def split_ruby_gemset(ruby_gemset)
+    ruby, gemset = ruby_gemset.split('@')
+    gemset ||= 'global'
+    return ruby, gemset
+  end
+
   def ruby_package_dependencies(ruby)
     pkgs = []
     if ruby =~ /^1\.[89]\../ || ruby =~ /^ree/ || ruby =~ /^ruby-/

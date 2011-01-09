@@ -1,6 +1,7 @@
+include RvmLibrary
+
 action :create do
-  ruby, gemset = new_resource.name.split('@')
-  gemset ||= 'global'
+  ruby, gemset = split_ruby_gemset(new_resource.name)
   rvm_ruby ruby do
     action :install
   end
