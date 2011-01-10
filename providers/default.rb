@@ -1,5 +1,6 @@
 action :install do
 
+  # install rvm system wide
   bash "install RVM" do
     user   "root"
     code   %{ bash < <( curl -L http://bit.ly/rvm-install-system-wide ) }

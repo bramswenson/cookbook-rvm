@@ -1,5 +1,8 @@
 = DESCRIPTION:
 
+This cookbook uses lots of:
+http://wiki.opscode.com/display/chef/Lightweight+Resources+and+Providers+(LWRP)
+
 = REQUIREMENTS:
 
 = ATTRIBUTES: 

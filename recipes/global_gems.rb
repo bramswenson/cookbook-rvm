@@ -16,6 +16,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
+# install the global gems from node[:rvm][:global_gems] attr
 rvm_gem node[:rvm][:global_gems] do
   action :install
   ruby node[:rvm][:default_ruby]
