@@ -3,7 +3,7 @@ action :run do
     interpreter "/usr/local/bin/rvm-shell"
     code %Q{
       source /etc/profile.d/rvm.sh
-      rvm use #{ruby}
+      rvm use #{new_resource.ruby}
       #{new_resource.code ? new_resource.code : new_resource.command }
     }
   end
