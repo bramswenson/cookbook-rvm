@@ -18,7 +18,7 @@
 #
 
 # Install all the packages rvm depends on
-pkgs = %w{sed grep tar gzip bzip2 bash curl }
+pkgs = %w{ sed grep tar gzip bzip2 bash curl }
 case node[:platform]
   when "centos","redhat","fedora","suse"
     pkgs << "git"

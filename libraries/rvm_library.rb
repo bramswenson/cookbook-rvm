@@ -1,8 +1,13 @@
 module RvmLibrary
 
-  def split_ruby_gemset(ruby_gemset)
+  def fully_qualified_ruby(ruby)
+    %x{ bash -c "source /usr/local/lib/rvm ; rvm list gemsets strings | grep #{ruby} | grep -v '@' " }
+  end
+
+  def split_ruby_gemset(ruby_gemset, fully_qualified=false)
     ruby, gemset = ruby_gemset.split('@')
     gemset ||= 'global'
+    ruby = fully_qualified_ruby(ruby) if fully_qualified
     return ruby, gemset
   end
 
