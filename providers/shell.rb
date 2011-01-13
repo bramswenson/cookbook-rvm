@@ -2,6 +2,7 @@ action :run do
   script new_resource.name do
     # use the rvm provided shell wrapper
     interpreter "/usr/local/bin/rvm-shell"
+    user new_resource.user if new_resource.user
     code %Q{
       # load the profile so we are sure rvm intact
       source /etc/profile.d/rvm.sh
