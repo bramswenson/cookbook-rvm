@@ -12,6 +12,6 @@ action :create do
     action :run
     ruby "#{ruby}@global" # this is how we say the ruby to use
     code %Q{ rvm gemset create #{gemset} }
-    not_if  "rvm list gemsets strings | grep '#{ruby}' | grep '#{gemset}'"
+    not_if  %Q{ rvm list gemsets strings | grep "#{ruby}" | egrep "#{gemset}$" }
   end
 end

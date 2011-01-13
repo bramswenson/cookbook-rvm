@@ -13,7 +13,7 @@ action :install do
   # rvm install ruby via rvm_shell
   rvm_shell "rvm install #{new_resource.name}" do
     action :run
-    code   "rvm install #{new_resource.name}"
-    not_if "rvm list strings | grep '#{new_resource.name}'"
+    code   %Q{ rvm install #{new_resource.name} }
+    not_if %Q{ rvm list strings | grep "#{new_resource.name}" }
   end
 end
